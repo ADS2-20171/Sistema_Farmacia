@@ -2,4 +2,7 @@
 Python(Django)
 
 ## Comands
-run project: manage.py runserver --settings=farmacia.settings.local
+install requirements:
+pip install -r requirements.txt
+run project: 
+./manage.py runserver --settings=farmacia.settings.local
