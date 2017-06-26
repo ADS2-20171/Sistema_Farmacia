@@ -1,0 +1,58 @@
+{% extends "main/home_main.html" %} 
+{% block contend %}
+
+<style type="text/css" media="screen">
+    .p {
+        margin-bottom: 1em;
+    }
+</style>
+
+<div class="row">
+    <div class=".col-sm-9 .col-md-8">
+        <a href="{% url 'ventas:crear_ventas' %}" class="btn btn-success p">Add Cliente</a>
+        <div class="well">
+            <h2>Listado Ventas</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>fecha</th>
+                            <th>numero</th>
+                            <th>serie</th>
+                            <th>direccion</th>
+                            <th>total</th>
+                            <th>vendedor</th>
+                            <th>ruc</th>
+                            <th>igv</th>
+                            <th>opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in object_list %}
+                        <tr>
+                            <td>{{ c.id }}</td>
+                            <td>{{ c.fecha }}</td>
+                            <td>{{ c.numero }}</td>
+                            <td>{{ c.serie }}</td>
+                            <td>{{ c.direccion }}</td>
+                            <td>{{ c.total }}</td>
+                            <td>{{ c.vendedor }}</td>
+                            <th>{{ c.ruc }}</th>
+                            <th>{{ c.igv }}</th>
+                            <td>
+                                <a href="{% url 'clientes:actualizar_clientes' c.id %}" class="btn btn-warning">Editar</a>
+                                <a href="{% url 'clientes:eliminar_clientes' c.id %}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock contend %}

@@ -1,0 +1,56 @@
+{% extends "main/home_main.html" %} 
+{% block contend %}
+
+<style type="text/css" media="screen">
+    .p {
+        margin-bottom: 1em;
+    },
+    .shadow1 { 
+  color: black; 
+  text-shadow: 2px 2px; 
+}
+
+</style>
+
+
+<div class="row">
+    <div class=".col-sm-9 .col-md-8">
+        <a href="{% url 'clientes:crear_clientes' %}" class="btn btn-success p">Add Cliente</a>
+        <div class="well">
+            <h2 class="text-center" >Listado Clientes</h2>
+            <div class="container-fluid table-responsive">
+                <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Dirección</th>
+                            <th>DNI</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in object_list %}
+                        <tr>
+                            <td>{{ c.id }}</td>
+                            <td>{{ c.nombre }}</td>
+                            <td>{{ c.apellido }}</td>
+                            <td>{{ c.direccion }}</td>
+                            <td>{{ c.dni }}</td>
+                            <td>
+                                <a href="{% url 'clientes:actualizar_clientes' c.id %}" class="glyphicon glyphicon-pencil text-primary"></a>
+                                <a href="{% url 'clientes:eliminar_clientes' c.id %}" class="glyphicon glyphicon-trash text-danger"></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock contend %}

@@ -19,4 +19,11 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('apps.main.urls',namespace="main")),
+    url(r'^', include('apps.users.urls', namespace="users")),
+    url(r'^', include('apps.compras.urls', namespace="compras")),
+    url(r'^', include('apps.cliente.urls', namespace="clientes")),
+    url(r'^', include('apps.proveedor.urls', namespace="proveedor")),
+    url(r'^', include('apps.medicamento.urls', namespace="medicamento")),
+    url(r'^', include('apps.trabajador.urls', namespace="trabajador")),
+    url(r'^', include('apps.ventas.urls', namespace="ventas")),
 ]

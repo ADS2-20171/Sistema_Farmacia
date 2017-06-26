@@ -1,0 +1,42 @@
+{% extends "main/home_main.html" %} 
+{% block contend %}
+<div class="row">
+    <div class=".col-md-9 .push-md-3">
+        <div class="well">
+            <h2>Listado Usuarios</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>nombre</th>
+                            <th>apellido_paterno</th>
+                            <th>apellido_materno</th>
+                            <th>dni</th>
+                            <th>direccion</th>
+                            <th>celular</th>
+                            <th>tipo</th>
+                            <th>password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in object_list %}
+                        <tr>
+                            <td>{{ c.id }}</td>
+                            <td>{{ c.nombre }}</td>
+                            <td>{{ c.apellido_paterno }}</td>
+                            <td>{{ c.apellido_materno }}</td>
+                            <td>{{ c.dni }}</td>
+                            <td>{{ c.direccion }}</td>
+                            <td>{{ c.celular }}</td>
+                            <td>{{ c.tipo }}</td>
+                            <td>{{ c.password }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contend %}

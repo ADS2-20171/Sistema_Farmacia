@@ -1,0 +1,13 @@
+{% extends "main/home_main.html" %} 
+{% load crispy_forms_tags %} 
+{% block tittle %} Crear Compras{% endblock tittle %} 
+{% block titleheader %}Crear Compras{% endblock titleheader %} {% block contend %}
+<h1>Formulario de Compras</h1>
+<br>
+<form method="POST" class="post-form">{% csrf_token %} 
+
+	{{ form|crispy }}
+    <button type="submit" class="save btn btn-success">Save</button>
+    <a href="{% url 'compras:listar_compras' %}" class="save btn btn-warning">Cancelar</a>
+</form>
+{% endblock %}

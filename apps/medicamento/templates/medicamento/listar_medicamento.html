@@ -1,0 +1,46 @@
+{% extends "main/home_main.html" %} 
+{% block contend %}
+<div class="row">
+    <div class=".col-md-9 .push-md-3">
+        <div class="well">
+            <h2>Listado Medicamento</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Codigo</th>
+                            <th>Componente</th>
+                            <th>Concentracion</th>
+                            <th>Descripcion</th>
+                            <th>Sanitario</th>
+                            <th>Tipo</th>
+                            <th>Precio Venta</th>
+                            <th>Nombre Laboratorio</th>
+                            <th>Stock Minimo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in object_list %}
+                        <tr>
+                            <td>{{ c.id }}</td>
+                            <td>{{ c.nombre }}</td>
+                            <td>{{ c.codigo }}</td>
+                            <td>{{ c.componente }}</td>
+                            <td>{{ c.concentracion }}</td>
+                            <td>{{ c.descripcion }}</td>
+                            <td>{{ c.sanitario }}</td>
+                            <td>{{ c.tipo }}</td>
+                            <td>{{ c.precio_venta }}</td>
+                            <td>{{ c.nombre_laboratorio }}</td>
+                            <td>{{ c.stock_minimo }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contend %}

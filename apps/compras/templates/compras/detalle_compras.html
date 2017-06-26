@@ -1,0 +1,43 @@
+{% extends "main/home_main.html" %}
+{% load crispy_forms_tags %} 
+{% block contend %}
+<div class="row">
+    <div class=".col-sm-9 .col-md-8">
+        <div class="well">
+            <h2>Listado Detalle Compras</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>cantidad</th>
+                            <th>estado</th>
+                            <th>fecha produccion</th>
+                            <th>fecha expiracion</th>
+                            <th>notificacion stock</th>
+                            <th>notificacion fecha expiracion</th>
+                            <th>igv</th>
+                            <th>compras</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in object_list %}
+                        <tr>
+                            <td>{{ c.id }}</td>
+                            <td>{{ c.cantidad }}</td>
+                            <td>{{ c.estado }}</td>
+                            <td>{{ c.fecha_produccion }}</td>
+                            <td>{{ c.fecha_expiracion}}</td>
+                            <td>{{ c.notificacion_stock }}</td>
+                            <td>{{ c.notificacion_fecha_expiracion }}</td>
+                            <td>{{ c.igv }}</td>
+                            <td>{{ c.compras_id}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contend %}

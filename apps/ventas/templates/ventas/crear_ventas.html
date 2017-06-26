@@ -1,0 +1,12 @@
+{% extends "main/home_main.html" %}
+{% load crispy_forms_tags %}
+{% block contend %}
+        <h1>Formulario de Ventas</h1>
+        <br>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="save btn btn-success">Save</button>
+            <a href="{% url 'clientes:listar_clientes' %}" class="save btn btn-warning">Cancelar</a>
+        </form>
+	
+{% endblock contend %}

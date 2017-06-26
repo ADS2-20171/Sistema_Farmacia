@@ -13,7 +13,17 @@ DJANGO_APPS = (
 )
 
 LOCAL_APPS = (
+        'crispy_forms',
+        'input_mask',
+
         'apps.main',
+        'apps.users',
+        'apps.cliente',
+        'apps.compras',
+        'apps.proveedor',
+        'apps.ventas',
+        'apps.medicamento',
+        'apps.trabajador',
 )
 
 THIRD_PARTY_APPS = (
@@ -35,21 +45,9 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'farmacia.urls'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
 
 WSGI_APPLICATION = 'farmacia.wsgi.application'
 
