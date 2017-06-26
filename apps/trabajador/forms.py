@@ -1,3 +1,4 @@
+# enconding : utf-8
 from django import forms
 from .models import Trabajador
 from input_mask.widgets import InputMask

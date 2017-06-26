@@ -8,7 +8,7 @@ from apps.proveedor.models import Proveedor
 class Compras(models.Model):
 	fecha = models.DateTimeField(default=timezone.now)
 	codigo = models.CharField(max_length=6)
-	medicamento = models.ManyToManyField(Medicamento, blank=True)
+	medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)
 	proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
 	trabajador = models.ForeignKey(Trabajador, on_delete=models.CASCADE)
 	total = models.CharField(max_length=23)

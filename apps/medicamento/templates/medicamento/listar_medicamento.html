@@ -3,7 +3,7 @@
 <div class="row">
     <div class=".col-md-9 .push-md-3">
         <div class="well">
-            <h2>Listado Medicamento</h2>
+            <h2 class="text-center">Listado Medicamento</h2>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
                     <thead>
@@ -19,6 +19,7 @@
                             <th>Precio Venta</th>
                             <th>Nombre Laboratorio</th>
                             <th>Stock Minimo</th>
+                            <th>Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,6 +36,10 @@
                             <td>{{ c.precio_venta }}</td>
                             <td>{{ c.nombre_laboratorio }}</td>
                             <td>{{ c.stock_minimo }}</td>
+                            <td>
+                                <a href="{% url 'medicamento:actualizar_medicamento' c.id %}" class="glyphicon glyphicon-pencil text-primary"></a>
+                                <a href="{% url 'medicamento:eliminar_medicamento' c.id %}" class="glyphicon glyphicon-trash text-danger"></a>
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>

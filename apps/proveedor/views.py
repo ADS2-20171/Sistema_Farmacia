@@ -14,7 +14,7 @@ class CreateProveedor(LoginRequiredMixin, CreateView):
     form_class = ProveedorForm
     template_name = 'proveedor/crear_proveedor.html'
     model = Proveedor
-    success_url = '/listar_prooveedor'
+    success_url = '/listar_proveedor'
 
 
 class ActualizarProveedor(UpdateView):

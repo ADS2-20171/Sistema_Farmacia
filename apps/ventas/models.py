@@ -2,6 +2,7 @@ from django.db import models
 from datetime import datetime
 from django.utils import timezone
 from apps.trabajador.models import Trabajador
+from apps.medicamento.models import Medicamento
 # Create your models here.
 
 class Factura(models.Model):
@@ -9,8 +10,9 @@ class Factura(models.Model):
 	numero = models.CharField(max_length=3)
 	serie = models.CharField(max_length=5)
 	direccion = models.CharField(max_length=100)
+	medicamento = models.ForeignKey(Medicamento, on_delete=models.CASCADE)
 	total = models.CharField(max_length=3)
-	vendedor = models.ForeignKey(Trabajador)
+	vendedor = models.ForeignKey(Trabajador, on_delete=models.CASCADE)
 	ruc = models.CharField(max_length=12)
 	igv = models.DecimalField(max_digits=8, decimal_places=2)
 

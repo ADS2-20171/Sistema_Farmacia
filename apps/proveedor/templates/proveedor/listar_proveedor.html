@@ -24,6 +24,7 @@
                             <th>Localidad</th>
                             <th>Telefono</th>
                             <th>E_mail</th>
+                            <th>Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,8 +39,8 @@
                             <td>{{ c.telefono}}</td>
                             <td>{{ c.e_mail}}</td>
                             <td>
-                                <a href="{% url 'proveedor:actualizar_proveedor' c.id %}" class="btn btn-warning">Editar</a>
-                                <a href="{% url 'proveedor:eliminar_proveedor' c.id %}" class="btn btn-danger">Eliminar</a>
+                                <a href="{% url 'proveedor:actualizar_proveedor' c.id %}" class="glyphicon glyphicon-pencil text-primary"></a>
+                                <a href="{% url 'proveedor:eliminar_proveedor' c.id %}" class="glyphicon glyphicon-trash text-danger"></a>
                             </td>
                         </tr>
                         {% endfor %}

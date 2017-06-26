@@ -11,7 +11,7 @@
     <div class=".col-sm-9 .col-md-8">
         <a href="{% url 'ventas:crear_ventas' %}" class="btn btn-success p">Add Cliente</a>
         <div class="well">
-            <h2>Listado Ventas</h2>
+            <h2 class="text-center">Listado Ventas</h2>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
                     <thead>
@@ -21,6 +21,7 @@
                             <th>numero</th>
                             <th>serie</th>
                             <th>direccion</th>
+                            <th>Medicamento</th>
                             <th>total</th>
                             <th>vendedor</th>
                             <th>ruc</th>
@@ -36,8 +37,9 @@
                             <td>{{ c.numero }}</td>
                             <td>{{ c.serie }}</td>
                             <td>{{ c.direccion }}</td>
+                            <td>{{ c.medicamento_id}}</td>
                             <td>{{ c.total }}</td>
-                            <td>{{ c.vendedor }}</td>
+                            <td>{{ c.trabajador_id }}</td>
                             <th>{{ c.ruc }}</th>
                             <th>{{ c.igv }}</th>
                             <td>
