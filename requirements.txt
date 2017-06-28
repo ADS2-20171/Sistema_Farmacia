@@ -1,7 +1,7 @@
 appdirs==1.4.3
 certifi==2017.4.17
 chardet==3.0.4
-Django==1.8.5
+Django==1.6.5
 django-bootstrap3-datepicker==0.4.1
 django-bootstrap3-datetimepicker-2==2.4.2
 django-braces==1.11.0
@@ -18,6 +18,4 @@ pyparsing==2.2.0
 pytz==2017.2
 reportlab==3.4.0
 requests==2.18.1
-six==1.10.0
-Unipath==1.1
 urllib3==1.21.1
