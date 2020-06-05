@@ -1,7 +1,7 @@
 appdirs==1.4.3
 certifi==2017.4.17
 chardet==3.0.4
-Django==1.6.5
+Django==1.11.29
 django-bootstrap3-datepicker==0.4.1
 django-bootstrap3-datetimepicker-2==2.4.2
 django-input-mask==2.0.2
